@@ -2,7 +2,7 @@ import {hide} from './modules/hideHtml.js';
 
 import {deleteBook} from './modules/deleteBooks.js';
 
-//import {addNewBook} from './modules/addingBook.js';
+
 
 
 class Book {
