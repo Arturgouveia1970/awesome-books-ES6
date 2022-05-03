@@ -1,20 +1,8 @@
 import {hide} from './modules/hideHtml.js';
-
-import {deleteBook} from './modules/deleteBooks.js';
-
+import horaCurrente from './modules/calendar.js';
 
 
-import { DateTime } from "./modules/luxon.min.js";
 
-const Date =() => {
-  const getDate = document.querySelector('.date');
-  const time = () => {
-    const currentDateTime = DateTime.now().toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
-    getDate.innerHTML = currentDateTime;
-  };
-  setInterval(time, 1000);
-};
-Date();
 
 class Book {
   constructor() {
@@ -50,7 +38,7 @@ class Book {
       this.getBookList();
     }
 
-   /* deleteBook(id) {
+    deleteBook(id) {
       this.bookStore = this.bookStore.filter((item) => {
         if (item.id === Number(id)) {
           return false;
@@ -59,7 +47,7 @@ class Book {
       });
       localStorage.setItem('singleBook', JSON.stringify(this.bookStore));
       this.getBookList();
-    }*/
+    }
 
 }
   
@@ -98,10 +86,8 @@ contactLink.addEventListener('click', () => {
   contactDisplay.style.display = 'flex';
 });
 
+const timeNow = document.getElementById('currentDate');
+timeNow.innerHTML = horaCurrente;
 window.onload = hide();
 
-/*window.onload = function () {
-    document.querySelector('.ADD').style.display = 'none';
-    document.querySelector('.contact').style.display = 'none';
-  };*/
   
