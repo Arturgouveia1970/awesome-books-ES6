@@ -18,9 +18,9 @@
 
 👤 **Artur Gouveia**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Arturgouveia1970](https://github.com/Arturgouveia1970)
+- Twitter: [@ArturGouveia10](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](www.linkedin.com/in/artur-gouveia-323868197)
 
 ## 🤝 Contributing
 
