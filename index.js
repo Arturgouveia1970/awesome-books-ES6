@@ -1,14 +1,11 @@
-import {hide} from './modules/hideHtml.js';
+import hide from './modules/hideHtml.js';
 import horaCurrente from './modules/calendar.js';
-
-
-
 
 class Book {
   constructor() {
     this.bookStore = JSON.parse(localStorage.getItem('singleBook')) || [];
   }
-  
+
   getBookList() {
     const bookList = document.getElementById('book-list');
     bookList.innerHTML = '';
@@ -26,31 +23,30 @@ class Book {
       });
     });
   }
-  
-    addNewBook(title, author) {
-      const id = this.bookStore.length + 1;
-      const addbook = {
-        title,
-        author,
-        id,
-      };
-      this.bookStore.push(addbook); localStorage.setItem('singleBook', JSON.stringify(this.bookStore));
-      this.getBookList();
-    }
 
-    deleteBook(id) {
-      this.bookStore = this.bookStore.filter((item) => {
-        if (item.id === Number(id)) {
-          return false;
-        }
-        return true;
-      });
-      localStorage.setItem('singleBook', JSON.stringify(this.bookStore));
-      this.getBookList();
-    }
+  addNewBook(title, author) {
+    const id = this.bookStore.length + 1;
+    const addbook = {
+      title,
+      author,
+      id,
+    };
+    this.bookStore.push(addbook); localStorage.setItem('singleBook', JSON.stringify(this.bookStore));
+    this.getBookList();
+  }
 
+  deleteBook(id) {
+    this.bookStore = this.bookStore.filter((item) => {
+      if (item.id === Number(id)) {
+        return false;
+      }
+      return true;
+    });
+    localStorage.setItem('singleBook', JSON.stringify(this.bookStore));
+    this.getBookList();
+  }
 }
-  
+
 const booksLibrary = new Book();
 booksLibrary.getBookList();
 const formData = document.getElementById('new-book');
@@ -60,26 +56,26 @@ formData.addEventListener('submit', (e) => {
   const getAuthor = document.getElementById('author').value;
   booksLibrary.addNewBook(getTitle, getAuthor);
 });
-  
+
 const listLink = document.getElementById('list-link');
 const addLink = document.getElementById('add-link');
 const contactLink = document.getElementById('contact-link');
 const addDisplay = document.querySelector('.ADD');
 const listDisplay = document.querySelector('.LIST');
 const contactDisplay = document.querySelector('.contact');
-  
+
 listLink.addEventListener('click', () => {
   addDisplay.style.display = 'none';
   contactDisplay.style.display = 'none';
   listDisplay.style.display = 'flex';
 });
-  
+
 addLink.addEventListener('click', () => {
   listDisplay.style.display = 'none';
   contactDisplay.style.display = 'none';
   addDisplay.style.display = 'flex';
 });
-  
+
 contactLink.addEventListener('click', () => {
   listDisplay.style.display = 'none';
   addDisplay.style.display = 'none';
@@ -89,5 +85,3 @@ contactLink.addEventListener('click', () => {
 const timeNow = document.getElementById('currentDate');
 timeNow.innerHTML = horaCurrente;
 window.onload = hide();
-
-  
