@@ -2,7 +2,9 @@ import {hide} from './modules/hideHtml.js';
 
 import {deleteBook} from './modules/deleteBooks.js';
 
+import {dateTime} from './modules/luxon.js';
 
+window.onload = hide();
 
 
 class Book {
@@ -23,7 +25,7 @@ class Book {
       const Allbtn = document.querySelectorAll('.remove-button');
       Allbtn.forEach((btn) => {
         btn.addEventListener('click', () => {
-          this.deleteBook(btn.id);
+          deleteBook(btn.id);
         });
       });
     }
@@ -38,6 +40,20 @@ class Book {
       this.bookStore.push(addbook); localStorage.setItem('singleBook', JSON.stringify(this.bookStore));
       this.getBookList();
     }
+
+    /*deleteBook(id) {
+      this.bookStore = this.bookStore.filter((item) => {
+        if (item.id === Number(id)) {
+          return false;
+        }
+        return true;
+      });
+      localStorage.setItem('singleBook', JSON.stringify(this.bookStore));
+      this.getBookList();
+    }*/
+
+    
+    
   
   }
   
@@ -76,10 +92,10 @@ class Book {
     contactDisplay.style.display = 'flex';
   });
 
-window.onload = hide();
+//window.onload = hide();
 
-/*window.onload = function () {
+window.onload = function () {
     document.querySelector('.ADD').style.display = 'none';
     document.querySelector('.contact').style.display = 'none';
-  };*/
+  };
   

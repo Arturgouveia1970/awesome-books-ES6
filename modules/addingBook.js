@@ -7,4 +7,4 @@ export function addNewBook(title, author) {
     };
     bookStore.push(addbook); localStorage.setItem('singleBook', JSON.stringify(bookStore));
     getBookList();
-  }
+}
