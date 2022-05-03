@@ -55,6 +55,8 @@ formData.addEventListener('submit', (e) => {
   const getTitle = document.getElementById('title').value;
   const getAuthor = document.getElementById('author').value;
   booksLibrary.addNewBook(getTitle, getAuthor);
+  document.getElementById('title').value = ''
+  document.getElementById('author').value = ''
 });
 
 const listLink = document.getElementById('list-link');
