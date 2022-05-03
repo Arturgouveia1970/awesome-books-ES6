@@ -1,11 +1,10 @@
-/*import {hide} from './modules/hideHtml.js';
+import {hide} from './modules/hideHtml.js';
 
-//import {deleteBook} from './modules/deleteBooks.js';
+import {deleteBook} from './modules/deleteBooks.js';
 
-<<<<<<< HEAD
-//import {dateTime} from './modules/luxon.js';
 
-import { DateTime } from "./modules/luxon";
+
+import { DateTime } from "./modules/luxon.min.js";
 
 const Date =() => {
   const getDate = document.querySelector('.date');
@@ -16,16 +15,12 @@ const Date =() => {
   setInterval(time, 1000);
 };
 Date();
-=======
-import {dateTime} from './modules/luxon.js';*/
->>>>>>> e3d9cdbd9b07771f1d413ca2f252e41904dadb74
 
 class Book {
   constructor() {
     this.bookStore = JSON.parse(localStorage.getItem('singleBook')) || [];
   }
   
-<<<<<<< HEAD
   getBookList() {
     const bookList = document.getElementById('book-list');
     bookList.innerHTML = '';
@@ -40,23 +35,6 @@ class Book {
     Allbtn.forEach((btn) => {
       btn.addEventListener('click', () => {
         this.deleteBook(btn.id);
-=======
-    getBookList() {
-      const bookList = document.getElementById('book-list');
-      bookList.innerHTML = '';
-      bookList.innerHTML += this.bookStore.map(
-        (el, index) => ` <div class="${index % 2 === 0 ? 'dark' : 'mediumdark'}">
-          <h4>${el.title}</h4>
-          <p>${el.author}</p>
-          <button type="button" id=${el.id} class='remove-button'>Remove</button>
-          </div>`,
-      );
-      const Allbtn = document.querySelectorAll('.remove-button');
-      Allbtn.forEach((btn) => {
-        btn.addEventListener('click', () => {
-          this.deleteBook(btn.id);
-        });
->>>>>>> e3d9cdbd9b07771f1d413ca2f252e41904dadb74
       });
     });
   }
@@ -72,7 +50,7 @@ class Book {
       this.getBookList();
     }
 
-    deleteBook(id) {
+   /* deleteBook(id) {
       this.bookStore = this.bookStore.filter((item) => {
         if (item.id === Number(id)) {
           return false;
@@ -81,10 +59,9 @@ class Book {
       });
       localStorage.setItem('singleBook', JSON.stringify(this.bookStore));
       this.getBookList();
-    }
+    }*/
 
 }
-<<<<<<< HEAD
   
 const booksLibrary = new Book();
 booksLibrary.getBookList();
@@ -95,8 +72,6 @@ formData.addEventListener('submit', (e) => {
   const getAuthor = document.getElementById('author').value;
   booksLibrary.addNewBook(getTitle, getAuthor);
 });
-=======
->>>>>>> e3d9cdbd9b07771f1d413ca2f252e41904dadb74
   
 const listLink = document.getElementById('list-link');
 const addLink = document.getElementById('add-link');
