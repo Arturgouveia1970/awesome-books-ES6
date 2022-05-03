@@ -1,11 +1,8 @@
-import {hide} from './modules/hideHtml.js';
+/*import {hide} from './modules/hideHtml.js';
 
 import {deleteBook} from './modules/deleteBooks.js';
 
-import {dateTime} from './modules/luxon.js';
-
-window.onload = hide();
-
+import {dateTime} from './modules/luxon.js';*/
 
 class Book {
     constructor() {
@@ -25,7 +22,7 @@ class Book {
       const Allbtn = document.querySelectorAll('.remove-button');
       Allbtn.forEach((btn) => {
         btn.addEventListener('click', () => {
-          deleteBook(btn.id);
+          this.deleteBook(btn.id);
         });
       });
     }
@@ -41,7 +38,7 @@ class Book {
       this.getBookList();
     }
 
-    /*deleteBook(id) {
+    deleteBook(id) {
       this.bookStore = this.bookStore.filter((item) => {
         if (item.id === Number(id)) {
           return false;
@@ -50,12 +47,9 @@ class Book {
       });
       localStorage.setItem('singleBook', JSON.stringify(this.bookStore));
       this.getBookList();
-    }*/
+    }
 
-    
-    
-  
-  }
+}
   
   const booksLibrary = new Book();
   booksLibrary.getBookList();
